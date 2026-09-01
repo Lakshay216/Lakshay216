@@ -30,6 +30,6 @@ if __name__ == "__main__":
         y = 158 + i * 70
         style = "" if static else f' style="animation-delay:{.16+i*.15:.2f}s"'
         out.append(f'<g class="row"{style}><text x="28" y="{y}" fill="{color}" font-size="17" font-weight="700">{label}</text><text x="150" y="{y}" fill="#c9d1d9" font-size="17">{esc(p[key])}</text></g>')
-    out.append(f'<line x1="28" y1="570" x2="792" y2="570" stroke="#30363d"/><text x="28" y="610" fill="#7d8590" font-size="15">{esc(p["prompt_name"])}@github:~$ <tspan fill="#c9d1d9">open to connect</tspan></text><rect x="337" y="596" width="9" height="16" fill="#c9d1d9"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.51;1" dur="1s" repeatCount="indefinite"/></rect></svg>')
+    out.append(f'<line x1="28" y1="570" x2="792" y2="570" stroke="#30363d"/><text x="28" y="610" fill="#7d8590" font-size="15">{esc(p["prompt_name"])}@github:~$ <tspan fill="#c9d1d9">open to connect</tspan><tspan fill="#c9d1d9"> █<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.51;1" dur="1s" repeatCount="indefinite"/></tspan></text></svg>')
     (ROOT / "info-card.svg").write_text("".join(out), encoding="utf-8")
     print("Wrote info-card.svg")

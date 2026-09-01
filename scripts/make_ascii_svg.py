@@ -73,6 +73,6 @@ if __name__ == "__main__":
             delay = i * .11
             out.append(f'<clipPath id="r{i}"><rect x="20" y="{art_top+i*CELL_H:.1f}" height="15" width="0"><animate attributeName="width" from="0" to="800" begin="{delay:.2f}s" dur=".11s" fill="freeze"/></rect></clipPath><g clip-path="url(#r{i})">{text}</g>')
     status_y = 850
-    out.append(f'<line x1="0" y1="820" x2="840" y2="820" stroke="#30363d"/><text x="20" y="{status_y}" fill="#7d8590" font-size="13">{esc(profile["prompt_name"])}@github:~$ whoami <tspan fill="#c9d1d9">{esc(profile["name"])}</tspan></text><rect x="300" y="838" width="8" height="14" fill="#c9d1d9"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.51;1" dur="1s" repeatCount="indefinite"/></rect></svg>')
+    out.append(f'<line x1="0" y1="820" x2="840" y2="820" stroke="#30363d"/><text x="20" y="{status_y}" fill="#7d8590" font-size="13">{esc(profile["prompt_name"])}@github:~$ whoami <tspan fill="#c9d1d9">{esc(profile["name"])}</tspan><tspan fill="#c9d1d9"> █<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.51;1" dur="1s" repeatCount="indefinite"/></tspan></text></svg>')
     (ROOT / "profile-ascii.svg").write_text("".join(out), encoding="utf-8")
     print("Wrote profile-ascii.svg")
