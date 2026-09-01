@@ -20,5 +20,6 @@
 <p><b>Bachelor of Computer Science student · Cloud Technologies · Full Stack Development</b></p>
 
 [![GitHub](https://img.shields.io/badge/GitHub-Lakshay216-0d1117?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Lakshay216)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Lakshay_Arora-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lakshay-arora-9b75b0316)
 
 </div>
