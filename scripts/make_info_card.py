@@ -16,7 +16,7 @@ ROWS = [
 if __name__ == "__main__":
     p = load_profile()
     static = bool(os.environ.get("STATIC"))
-    width, height = 700, 500
+    width, height = 700, 550
     css = "" if static else "@keyframes row{to{opacity:1;transform:translateX(0)}}.row{opacity:0;transform:translateX(-12px);animation:row .42s ease-out forwards}"
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"><style>{css}</style>',
            '<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#111722"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>',
@@ -27,13 +27,13 @@ if __name__ == "__main__":
     out.append(f'<text x="350" y="20" fill="#7d8590" font-size="16" text-anchor="middle">{esc(p["prompt_name"])}@github: ~$ neofetch</text>')
     out.append(f'<text x="28" y="68" fill="#e6edf3" font-size="32" font-weight="700">{esc(p["name"])}</text><text x="28" y="94" fill="#7d8590" font-size="18">{esc(p["username"])}@github</text><line x1="28" y1="108" x2="672" y2="108" stroke="#30363d"/>')
     for i, (label, key, color) in enumerate(ROWS):
-        y = 140 + i * 52
+        y = 145 + i * 60
         style = "" if static else f' style="animation-delay:{.16+i*.15:.2f}s"'
         parts = str(p[key]).split(" | ")
         value = esc(parts[0])
         for part in parts[1:]:
             value += f'<tspan x="180" dy="24">{esc(part)}</tspan>'
         out.append(f'<g class="row"{style}><text x="28" y="{y}" fill="{color}" font-size="22" font-weight="700">{label}</text><text x="180" y="{y}" fill="#c9d1d9" font-size="22">{value}</text></g>')
-    out.append(f'<line x1="28" y1="435" x2="672" y2="435" stroke="#30363d"/><text x="28" y="474" fill="#7d8590" font-size="18">{esc(p["prompt_name"])}@github:~$ <tspan fill="#c9d1d9">open to connect</tspan></text><rect x="395" y="458" width="10" height="18" fill="#c9d1d9"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.51;1" dur="1s" repeatCount="indefinite"/></rect></svg>')
+    out.append(f'<line x1="28" y1="490" x2="672" y2="490" stroke="#30363d"/><text x="28" y="527" fill="#7d8590" font-size="18">{esc(p["prompt_name"])}@github:~$ <tspan fill="#c9d1d9">open to connect</tspan></text><rect x="395" y="511" width="10" height="18" fill="#c9d1d9"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.51;1" dur="1s" repeatCount="indefinite"/></rect></svg>')
     (ROOT / "info-card.svg").write_text("".join(out), encoding="utf-8")
     print("Wrote info-card.svg")
