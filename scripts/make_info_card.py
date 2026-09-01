@@ -34,6 +34,6 @@ if __name__ == "__main__":
         for part in parts[1:]:
             value += f'<tspan x="180" dy="24">{esc(part)}</tspan>'
         out.append(f'<g class="row"{style}><text x="28" y="{y}" fill="{color}" font-size="22" font-weight="700">{label}</text><text x="180" y="{y}" fill="#c9d1d9" font-size="22">{value}</text></g>')
-    out.append(f'<line x1="28" y1="435" x2="672" y2="435" stroke="#30363d"/><text x="28" y="474" fill="#7d8590" font-size="18">{esc(p["prompt_name"])}@github:~$ <tspan fill="#c9d1d9">open to connect</tspan></text><rect x="336" y="458" width="10" height="18" fill="#c9d1d9"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.51;1" dur="1s" repeatCount="indefinite"/></rect></svg>')
+    out.append(f'<line x1="28" y1="435" x2="672" y2="435" stroke="#30363d"/><text x="28" y="474" fill="#7d8590" font-size="18">{esc(p["prompt_name"])}@github:~$ <tspan fill="#c9d1d9">open to connect</tspan></text><rect x="395" y="458" width="10" height="18" fill="#c9d1d9"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.51;1" dur="1s" repeatCount="indefinite"/></rect></svg>')
     (ROOT / "info-card.svg").write_text("".join(out), encoding="utf-8")
     print("Wrote info-card.svg")
