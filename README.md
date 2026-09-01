@@ -10,8 +10,8 @@
 
 <table>
 <tr>
-<td valign="top"><img src="./profile-ascii.svg" width="370" alt="Lakshay Arora ASCII portrait" /></td>
-<td valign="top"><img src="./info-card.svg" width="490" alt="Lakshay Arora profile information" /></td>
+<td valign="top"><img src="./profile-ascii.svg" width="300" alt="Lakshay Arora ASCII portrait" /></td>
+<td valign="top"><img src="./info-card.svg" width="560" alt="Lakshay Arora profile information" /></td>
 </tr>
 </table>
 
